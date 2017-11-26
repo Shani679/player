@@ -25,10 +25,10 @@ app.use('/playlist', playlistRouter);
 
 async.waterfall([
   callback => mongoose.connect(process.env.CONNECTION_STRING, {useMongoClient: true}, err => callback(err)),
-  callback => app.listen(3001, err => callback(err))
+  callback => app.listen(80, err => callback(err))
 ], (err, results) => {
   if (err) {
     return console.log(err);
   }
-  return console.log(`Server up and running on port 3001 and connected to mongo DB`);
+  return console.log(`Server up and running on port 80 and connected to mongo DB`);
 });
