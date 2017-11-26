@@ -1,0 +1,486 @@
+body{
+	background-image: url("../images/NYbackground.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Nova Round', cursive;
+	overflow-x:hidden;
+}
+#logo{
+    height: 51px !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+button span{
+	background-color: rgb(0, 181, 180);
+}
+.navbar-header{
+	height: 81px;
+	margin-right: 15px !important;
+}
+.container-fluid{
+	width: 85% !important;
+}
+#search{
+	outline: none;
+	height: 30px;
+	text-indent: 5px;
+	border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(0, 181, 180) !important;
+    background-color: black;
+    color: rgb(0,181,180);
+}
+.navbar{
+	background-color: black;
+	box-shadow: 0 15px 5px 0 rgba(0,0,0,0.4), 0 10px 20px 0 rgba(0,0,0,0.4);
+}
+.nav-input{
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-left: 15px;
+	position: relative;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.85);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding-left: 0px !important;
+    border-radius: 5px;
+}
+.dropdown-content li {
+    float: none;
+    color: rgb(0, 181, 180);
+    width: 220px;
+    list-style: none;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+.dropdown-content li:hover{
+	background-color: black;
+}
+.dropdown-content li img{
+	height: 60px;
+	width: 60px;
+	padding: 10px;
+	border-radius: 100%;
+}
+li .glyphicon-play{
+	position: absolute;
+	right: 10px;
+	top:25px;
+}
+.add-new > .navbar-brand{
+	border-right: 1px solid;
+}
+.navbar-brand{
+	font-size: 22px;
+	color: rgb(0, 181, 180);
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+.navbar-brand > i{
+	margin-right: 10px;
+}
+.fa-plus-circle{
+	cursor: pointer;
+}
+.albums-wrapper{
+	width: 85%;
+	margin: 0 auto;
+	height: 584px;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    position: relative;
+}
+.albums-wrapper > .row{
+	display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.disc-cover{
+	border-radius: 100%;
+	margin: 0 auto;
+	height: 200px;
+	width: 200px;
+	background-color: white;
+	background-size: cover;
+	position: relative;
+	z-index: 2;
+	box-shadow: 32px 39px 23px -18px rgba(0,0,0,0.75);
+}
+.disc-cover:hover .overlay {
+	transform: scale(1);
+	opacity: 1;
+}
+.album-name{
+	text-align: center;
+	font-size: 25px;
+	color: white;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+.album{
+	margin-bottom: 20px;
+}
+.hole{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	height: 40px;
+	width: 40px;
+	background-image: linear-gradient(to top, #F0E6D3 0%, #405256 70%);
+	box-shadow: inset -4px -5px 17px #000000;
+}
+#player-hole{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 100%;
+	height: 45px;
+	width: 45px;
+	border: 1px solid black;
+	background-image: linear-gradient(to top, #F0E6D3 0%, #405256 70%);
+	box-shadow: inset -4px -5px 17px #000000;
+}
+.pencil1, .trash1, .play, .fa-info{
+	cursor: pointer;
+	color: rgb(0, 181, 180);
+	font-size: 20px !important;
+	position: absolute;
+	text-shadow: 3px 3px 3px black;
+}
+.fa-info{
+	font-size: 22px !important;
+	top: 20px;
+	left: 73px;
+}
+.play{
+	font-size: 22px !important;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.trash1{
+	top:20px;
+	left: 88px;
+}
+.pencil1{
+	top:20px;
+	left: 110px;
+}
+.player-container{
+	width: 650px;
+	margin: 0 auto;
+	display: none;
+}
+.mt-responsive{
+	margin-top: 110px !important;
+}
+#player-icons{
+	text-align: center;
+	height: 30px;
+	width: 100%;
+}
+#player-icons .fa-trash-o, #player-icons .fa-pencil, #player-icons .fa-times{
+	font-size: 20px !important;
+	cursor: pointer;
+	color: black;
+}
+#player{
+	height: 275px;
+	width: 100%;
+	border-radius: 200px;
+	position: relative;
+	max-width: 100%;
+	background-size: cover;
+	background-color: rgba(0, 0, 0, 0.4);
+	box-shadow: 0 20px 5px 0 rgba(0,0,0,0.5), 0 10px 20px 0 rgba(0,0,0,0.5);
+}
+.songs-panel{
+	height: 250px;
+}
+.player-disc-cover{
+	height: 200px;
+	width: 200px;
+	margin-left: 25px;
+	margin-top:37.5px;
+	margin-bottom: 37.5px;
+	border-radius: 100%;
+	background-color: white;
+	position: relative;
+	box-shadow: 0 10px 5px 0 rgba(0,0,0,0.5), 0 10px 20px 0 rgba(0,0,0,0.5);
+}
+.glyphicon-pause, .replay{
+	font-size: 25px !important;
+	border-radius: 100%;
+	color: black;
+	position: absolute;
+	background-color: white;
+	border: 2px solid black;
+    padding: 6px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+	opacity: 0;
+}
+.replay{
+	padding-left: 10px !important;
+	padding-right: 8px !important;
+}
+#player-hole:hover > .replay{
+	opacity: 1;
+}
+#player-hole:hover > .glyphicon-pause{
+	opacity: 1 !important;
+}
+.animated-disc{
+	animation-name: spinnerRotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes spinnerRotate{
+    from{-webkit-transform:rotate(0deg);}
+    to{-webkit-transform:rotate(360deg);}
+}
+audio{
+	position: absolute;
+	top:75px;
+	width: 284px;
+	height: 25px;
+}
+.current-song{
+	color: rgb(0, 181, 180);
+	text-align: center;
+	margin-top: 12px;
+}
+.current-song > span{
+	margin-right: 20px;
+	margin-left: 20px;
+}
+footer{
+	display: none;
+	margin: 0 auto;
+}
+.songs-list{
+	position: absolute;
+	top:110px;
+	padding-left: 0px !important;
+	width: 284px;
+	height: 140px;
+    overflow-y: auto;
+}
+#player:hover{
+	box-shadow: 0 20px 5px 0 rgba(0,0,0,0.5), 0 10px 20px 0 rgba(0,0,0,0.5);
+}
+.song-item{
+	cursor: pointer;
+	color: black;
+	position: relative;
+	text-indent: 10px;
+	height: 30px;
+	line-height: 30px;
+	list-style-position: inside;
+	border-radius: 7px;
+	margin-bottom: 5px;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; 
+}
+#current-album{
+	text-align: center;
+	text-shadow: 5px 5px 5px black;
+    margin-bottom: 10px;
+    color: white;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.active, .transparent:hover{
+	font-weight: bold;
+	box-shadow: 0 20px 5px 0 rgba(0,0,0,0.5), 0 10px 20px 0 rgba(0,0,0,0.5);
+	font-size: 16px;
+	background-image: linear-gradient(to left, #00B5B4 0%, #F1F1F1 60%);
+}
+.transparent{
+	background-image: linear-gradient(to left, rgba(0,181,180,0.3) 0%, rgba(241,241,241,0.3) 60%);
+}
+.active:hover:before{
+	content: "\f04c";
+	font-family: FontAwesome;
+  	display: inline-block;
+  	margin-left: -10px;
+  	margin-right: 10px; 
+ 	width: 1.3em;
+ 	font-size: 12px; 
+}
+.transparent:hover:before, .paused:hover:before{
+	content: "\f04b";
+	font-family: FontAwesome;
+  	display: inline-block;
+  	margin-left: -10px;
+  	margin-right: 10px; 
+ 	width: 1.3em;
+ 	font-size: 12px; 
+}
+.songs-list .active:hover, .songs-list .transparent:hover{
+	list-style: none !important;
+}
+.fa-forward, .fa-backward{
+    cursor: pointer;
+}
+button{
+  outline: none !important;
+}
+#scroll{
+	margin-top: 100px;
+	height: 100px;
+	width: 200px;
+	margin-left: 400px;
+	overflow:auto;
+	border: 1px solid black;
+}
+.fa-arrow-circle-down, .fa-arrow-circle-up{
+	cursor: pointer;
+	font-size: 25px;
+	color: white;
+}
+.arrow{
+	font-size: 30px;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	background-color: rgb(0, 181, 180) !important;
+	box-shadow: 0 5px black;
+	border: none;
+	border-radius: 5px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.up{
+	height: 50px;
+	position: relative;
+}
+.down{
+	height: 50px;
+	position: relative;
+	margin-bottom: 60px;
+}
+.title{
+	height: 45px;
+	color: white;
+	background-color: (0,0,0,0.6);
+	margin-bottom: 10px !important;
+	font-size: 30px;
+	padding-left: 15px;
+}
+.input-group{
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	height: 45px;
+}
+.input-group-btn{
+	margin-top: -1px !important;
+	padding-bottom: 0px !important;
+}
+.mt-50{
+	margin-top: 50px;
+}
+audio::-webkit-media-controls-panel{
+	background-color: black;
+	box-shadow: 0 10px 5px 0 rgba(0,0,0,0.5), 0 10px 20px 0 rgba(0,0,0,0.5);
+	border-radius: 20px !important;
+}
+audio::-webkit-media-controls-current-time-display, audio::-webkit-media-controls-timeline, audio::-webkit-media-controls-toggle-closed-captions-button{
+	color: rgb(0, 181, 180);
+}
+audio::-webkit-media-controls-volume-slider, audio::-webkit-media-controls-timeline, audio::-webkit-media-controls-toggle-closed-captions-button{
+	background-color: rgb(0, 181, 180);
+}
+.glyphicon-arrow-up, .glyphicon-arrow-down{
+	color: white;
+	top:3px;
+	right: 3px;
+}
+.albumId{
+	display: none;
+}
+.top-shelf {
+	width: 400px;
+	position:relative;
+	top:-12px;
+	z-index: 1;
+	border-bottom: 25px solid #A1A194;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+} 
+.top-shelf-edge {
+	width: 405px;
+	height: 12px;
+	z-index: 99;
+	position: relative;
+	top:-12px;
+	background: #5B605F;
+}
+.overlay {
+	position: absolute;
+	background: rgba(0,0,0,0.8);
+	width: inherit;
+	height: inherit;
+	border-radius: 100px;
+	opacity: 0;
+	transition: all 0.4s ease-in-out;
+	transform: scale(0);
+	-webkit-backface-visibility: hidden;
+}
+.songs-list::-webkit-scrollbar {
+    width: 1em;
+}
+.songs-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.songs-list::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 5px;
+}
+.songs-list::-webkit-scrollbar-button {
+    background-color: #f1f1f1;
+}
+.overlay > ol{
+	list-style-position: inside;
+	transform: translateX(-200px);
+	opacity: 0;
+	transition: all 0.8s ease-in-out; 
+	box-shadow: 2px 2px 9px -1px rgb(0, 181, 180);
+    color: #d6e9c6;
+    background-color: black;
+    height: inherit;
+    width: inherit;
+    border-radius: 100%;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.glyphicon-remove{
+	left: 50px;
+	top: -10px;
+	cursor: pointer;
+}
+hr{
+	margin: 0 auto;
+	width: 85%;
+}
+hr:last-child{
+	display: none;
+}
+

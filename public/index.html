@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sounds Good</title>
+    <link href="https://fonts.googleapis.com/css?family=Nova+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/media.css">
+    <link rel="stylesheet" type="text/css" href="css/popup.css">
+    <link rel="icon" type="png" href="http://www.iconarchive.com/download/i51185/yohproject/crayon-cute/headphone.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="js/playlist.js"></script>
+    <script type="text/javascript" src="js/jquery.arctext.js"></script>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <img  id="logo" src="images/playlist-logo.jpg">
+        </div>
+        <div class="nav navbar-nav add-new">
+          <span class="navbar-brand"><i class="fa fa-plus-circle add-new-playlist"></i>Add new playlist</span>
+        </div>
+        <div class="nav navbar-nav nav-input dropdown">
+          <input type="text" id="search" placeholder="Search...">
+          <ul class="dropdown-content" id="myDropdown">
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="player-container mt-responsive">
+      <div id="player-icons">
+        <i class='fa fa-trash-o trash2' title="delete playlist"></i>
+        <i class='fa fa-pencil pencil2' title="edit playlist"></i>
+        <i class="fa fa-times" title="close player"></i>
+      </div>
+      <div id="player">
+        <div class="col-xs-12 col-sm-12 col-md-5 disc-panel">
+          <div class="player-disc-cover"></div>
+          <div id="player-hole"></div>
+          <span class="albumId"></span>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 songs-panel">
+          <h2 id="current-album"></h2>
+          <audio controls controlsList="nodownload">
+            <source type="audio/mpeg">
+          </audio>
+          <ol class='songs-list'></ol>
+        </div>
+      </div>
+    </div>
+    <div class="up mt-responsive"><button class="arrow arrow-up"><span class="glyphicon glyphicon-arrow-up"></span></button></div>
+    <div class="albums-wrapper">
+      <div class="row"></div>
+    </div>
+    <div class="down"><button class="arrow arrow-down"><span class="glyphicon glyphicon-arrow-down"></span></button></div>
+    <footer class="navbar navbar-fixed-bottom">
+      <h4 class="current-song"></h4>
+    </footer>
+    <div id="popup1" class="window">
+      <div class="box">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <i class="fa fa-window-close pointer pull-right" aria-hidden="true"></i>
+            <h3 class="first-popup-title"></h3>
+            <span class="albumId"></span> 
+          </div>
+          <div class="panel-body p-info row">
+            <div class="col-sm-8">
+              <div class="form-group">
+                <input type="text" id="playlist-name" placeholder="* Playlist Name" class="name">
+                <p class="field-warning"></p>
+              </div>
+              <div class="form-group">
+                <input type="text" id="cover-url" placeholder="* Playlist Cover" class="image url">
+                <p class="field-warning"></p>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <img class="image-cover img-thumbnail" alt="Preview">
+            </div>
+          </div>
+          <div class="panel-footer">
+            <button type="button" class="btn btn-hover" id="update-playlist">UPDATE</button>
+            <button type="button" class="btn btn-hover" id="next">NEXT</button>
+            <button type="button" class="btn btn-hover" id="reset-step1">RESET FIELDS</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup2" class="window">
+      <div class="box">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <i class="fa fa-window-close pointer pull-right" aria-hidden="true"></i>
+            <h3 class="second-popup-title"></h3>
+          </div>
+          <div class="panel-body">
+            <div class="songs row"></div>
+            <span class="add"><i class="fa fa-plus-circle new-song"></i>Add another song</span>
+          </div>
+          <div class="panel-footer">
+            <button type="button" class="btn btn-hover back">BACK</button>
+            <button type="button" class="btn btn-hover" id="reset-step2">RESET FIELDS</button>
+            <button type="button" class="btn btn-hover pull-right update-songs">UPDATE & SAVE</button>
+            <button type="button" class="btn btn-hover pull-right finish">FINISH & SAVE</button>
+            <p id="warning"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup3" class="window">
+      <div class="box">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <i class="fa fa-window-close pointer pull-right" aria-hidden="true"></i>
+            <h3 >Confirm delete</h3>
+          </div>
+          <div class="panel-body delete-message"></div>
+          <span class="albumId"></span>
+          <div class="panel-footer">
+            <button type="button" class="btn" id="delete">
+              <span class="trash">
+                <span></span>
+                <i></i>
+              </span>
+            </button>
+            <button type="button" class="btn btn-hover pull-right" id="cancel">CANCEL</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup4" class="window">
+      <div class="box">
+        <div class="panel panel-success">
+          <div class="panel-body success">
+            <i class="fa fa-window-close pointer pull-right" aria-hidden="true"></i>
+            <h2 id="done">Your playlist is ready to play</h2>
+            <h3 id="album-title"></h3>
+            <div id="image-album">
+              <div class="hole2"></div>
+              <span class="glyphicon glyphicon-play"></span>
+            </div>
+            <ol id="album-songs">
+          </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

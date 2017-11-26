@@ -1,0 +1,73 @@
+@media (max-width: 1200px){
+	.box{
+		width: 60% !important;
+	}
+}
+@media (max-width: 991px){
+	#player{
+		width: 300px;
+		height: 550px;
+		margin: 0 auto;
+	}
+	audio, .songs-list{
+		width: 270px !important;
+		margin: 0 auto;
+	}
+	.player-disc-cover{
+		margin-left: 35px !important;
+		margin-right: 35px !important;
+		margin-bottom: 0px !important;
+	}
+	.top-shelf-edge{
+		width: 420px !important;
+	}
+	.top-shelf{
+		width: 470px !important;
+	}
+}
+@media (max-width: 768px){
+	.player-container{
+		width: 90%;
+	}
+	.mt-responsive{
+		margin-top: 220px !important;
+	}
+	.box{
+		width: 75% !important;
+		margin-top: 170px !important;
+	}
+	.navbar-brand{
+		margin-top: 0px !important;
+		margin-bottom: 0px !important;
+	}
+	.nav-input{
+		margin-top: 0px !important;
+	}
+	.add-new > .navbar-brand{
+		border-right: none;
+	}
+	.albums-wrapper{
+		width: 90% !important;
+	}
+	.top-shelf-edge{
+		width: 100% !important;
+	}
+	.top-shelf{
+		width: 100% !important;
+	}
+}
+@media (max-width: 350px){
+	.box{
+		width: 60% !important;
+	}
+	audio, .songs-list{
+		width: 200px !important;
+		margin: 0 auto !important;
+	}
+	.player-disc-cover{
+		margin: 25px auto !important;
+	}
+	#current-album{
+		font-size: 25px !important;
+	}
+}
