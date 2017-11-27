@@ -4,11 +4,6 @@ const playlistRouter=require('./routers/playlistRouter');
 const bodyParser=require('body-parser');
 const mongoose=require('mongoose');
 const async=require('async');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const passportConfig = require('./auth/passport-conf');
 const env = require('./env/development-env');
 
