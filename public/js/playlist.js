@@ -352,7 +352,7 @@ $(document).ready(()=>{
 	}
 	$(document).on('click', '.overlay .fa-info', function(){
 		ajaxCallService('/playlist/' + $(this).closest('.album').attr('id') + '/songs', 'get').then(response=>{
-			response.data[0].songs.forEach(current => $(this).siblings('ol').append('<li>' + current.name + '</li>'));
+			response.data.forEach(current => $(this).siblings('ol').append('<li>' + current.name + '</li>'));
 			$(this).siblings('ol').css('transform', 'translateX(0px)').css('opacity', '1').prepend('<span class="glyphicon glyphicon-remove"></span>');
 		})
 	})
