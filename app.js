@@ -7,10 +7,6 @@ const async=require('async');
 const passportConfig = require('./auth/passport-conf');
 const env = require('./env/development-env');
 
-passport.use(new LocalStrategy(passportConfig.login));
-passport.serializeUser(passportConfig.serializeUser);
-passport.deserializeUser(passportConfig.deserializeUser);
-
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
 
